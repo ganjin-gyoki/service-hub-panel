@@ -196,7 +196,7 @@ async function refresh() {
     if (data.services.some((service) => service.state === "starting" || service.state === "stopping")) delay = 2000;
   } catch (error) {
     setConnection(false, "PCに接続できません");
-    showNotice("PCに接続できません。PCの電源が入っているか、このスマホの Tailscale がオンになっているかを確認してください。");
+    showNotice("PCに接続できません。PCの電源が入っているか、このスマホの Tailscale がオンになっているかを確認してください。初めて開いたときに「ローカル ネットワーク上のデバイスへのアクセス」の許可を求められたら「許可」を選んでください。");
     $("services").querySelectorAll("input").forEach((input) => { input.disabled = true; });
     delay = 10000;
   }
